@@ -1,21 +1,23 @@
+import { CHANGE_CATEGORY } from './actionTypes';
+
 const initialState = {
   list: [
-    { name: 'electronics', displayName: 'Electronics', description: 'Various electronic items' },
-    { name: 'clothing', displayName: 'Clothing', description: 'Fashion and apparel' },
+    { name: 'Laptop', category: 'electronics', description: 'High performance laptop', price: 1000, inventory: 5 },
+    { name: 'Shirt', category: 'clothing', description: 'Comfortable cotton shirt', price: 20, inventory: 15 },
   ],
-  active: '',
+  filtered: [],
 };
 
-const categoriesReducer = (state = initialState, action) => {
+const productsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'CHANGE_CATEGORY':
+    case CHANGE_CATEGORY:
       return {
         ...state,
-        active: action.payload,
+        filtered: state.list.filter(product => product.category === action.payload),
       };
     default:
       return state;
   }
 };
 
-export default categoriesReducer;
+export default productsReducer;

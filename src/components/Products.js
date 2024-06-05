@@ -2,15 +2,23 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 const Products = () => {
-  const products = useSelector(state => state.products.filtered);
+  const filteredProducts = useSelector(state => state.products.filteredProducts);
+
+  // Check if filteredProducts is undefined before mapping
+  if (!filteredProducts) {
+    return <div>Loading...</div>; // or any loading indicator
+  }
 
   return (
     <div>
       <h2>Products</h2>
       <ul>
-        {products.map(product => (
-          <li key={product.name}>
-            {product.name} - ${product.price}
+        {filteredProducts.map(product => (
+          <li key={product.id}>
+            <h3>{product.name}</h3>
+            <p>{product.description}</p>
+            <p>Price: ${product.price}</p>
+            <button>Add to Cart</button>
           </li>
         ))}
       </ul>

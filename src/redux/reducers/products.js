@@ -1,3 +1,5 @@
+import { CHANGE_CATEGORY } from './actionTypes';
+
 const initialState = {
   list: [
     { name: 'Laptop', category: 'electronics', description: 'High performance laptop', price: 1000, inventory: 5 },
@@ -8,7 +10,7 @@ const initialState = {
 
 const productsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'CHANGE_CATEGORY':
+    case CHANGE_CATEGORY:
       return {
         ...state,
         filtered: state.list.filter(product => product.category === action.payload),
