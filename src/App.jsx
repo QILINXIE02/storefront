@@ -1,17 +1,19 @@
 import React from 'react';
-import Header from './Components/Header';
-import Footer from './Components/Footer';
-import Categories from './Components/Categories';
-import Products from './Components/Products';
-import './App.scss';
+import './App.css';
+import Categories from './Components/Categories/index';
+import Footer from './Components/Footer/index';
+import Header from './Components/Header/index';
+import Products from './Components/Products/index';
 
-const App = () => (
-  <div className="App">
-    <Header />
-    <Categories />
-    <Products />
-    <Footer />
-  </div>
-);
+function App() {
+  return (
+    <div className="App">
+      <Header />
+      <Categories />
+      <Products />
+      <Footer />
+    </div>
+  );
+}
 
 export default App;
