@@ -1,14 +1,12 @@
-// src/Components/Products/index.jsx
-
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Grid, Card, CardContent, Typography, Button } from '@mui/material';
 import { fetchProducts } from '../../api';
-import { setProducts } from '../store/Products/index';
+import { setProducts } from './product';
 
 const Products = () => {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.products); // Assuming state.products contains the list
+  const products = useSelector((state) => state.products.list); // Correct state access
   const activeCategory = useSelector((state) => state.categories.activeCategory);
 
   useEffect(() => {
@@ -32,7 +30,7 @@ const Products = () => {
         <Grid item xs={12} sm={6} md={4} key={product.id}>
           <Card>
             <CardContent>
-              <Typography variant="h5">{product.title}</Typography>
+              <Typography variant="h5">{product.name}</Typography>
               <Typography variant="body2">{product.description}</Typography>
               <Typography variant="h6">${product.price}</Typography>
               <Button variant="contained" color="primary">Add to Cart</Button>

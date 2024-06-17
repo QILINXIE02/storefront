@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { List, ListItem, Button, Typography } from '@mui/material';
 import { fetchCategories } from '../../api';
 import { selectCategory } from '../../store/Categories';
+import './categories.css'; 
+
 
 const Categories = () => {
   const dispatch = useDispatch();

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "An online shopping portal for a fictional store",
   "main": "src/main.jsx",
+  "type": "module",
   "scripts": {
     "start": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
     "build": "NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
@@ -32,6 +33,7 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^14.4.3",
